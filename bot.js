@@ -54,7 +54,7 @@ client.on('voiceStateUpdate', async function (oldMember, newMember)  {
       let today = new Date();
       if(today.getDay() == 6 && (today.getHours() > 4 && today.getHours() < 11)){
 
-        textChannel.send(`Nosso segurança chegou no horário, bateu o ponto às ${today.toLocaleTimeString()} e está no horário`, {files: ["https://cdn.discordapp.com/attachments/322106045486858240/865922496901808158/20210717_084633.jpg"]});
+        textChannel.send(`Nosso segurança chegou, bateu o ponto às ${today.toLocaleTimeString()} e está no horário`, {files: ["https://cdn.discordapp.com/attachments/322106045486858240/872608714648064020/leo.jpg"]});
 
       } else {
     
