@@ -89,6 +89,17 @@ client.on('voiceStateUpdate', async function (oldMember, newMember)  {
       });
     }
 
+    else if (newMember.id ==='224953693089300492') {//Gustavo
+      
+      textChannel.send(`Praeiro Sayajin de Guaianezes`, { files: ['https://cdn.discordapp.com/attachments/322106045486858240/873310468746403941/gustavo.jpg']}).then((message) => {
+        setTimeout(() => {            //Apaga mensagem após 3 Minutos
+          message.delete();
+        }, 1000 * 180)
+      });
+    }
+
+
+
   } else if (oldUserChannel === '419612592542318593' && newUserChannel !== '419612592542318593') { // Alguém saiu do voice
     textChannel.send(`Agora a gente ganha`).then((message) => {
       setTimeout(() => {        //Apaga mensagem após 3 Minutos
