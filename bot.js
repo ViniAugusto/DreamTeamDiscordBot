@@ -117,7 +117,7 @@ client.on('message', message =>{
 	const command = args.shift().toLowerCase();
 
 	if (command === 'sexo') {
-		message.channel.send('O sexo é um acidente: o que dele recebemos é momentâneo e casual; visamos a algo mais secreto e misterioso do qual o sexo é apenas um sinal, um símbolo.Pong.').then((message) => {
+		message.channel.send('O sexo é um acidente: o que dele recebemos é momentâneo e casual; visamos a algo mais secreto e misterioso do qual o sexo é apenas um sinal, um símbolo.').then((message) => {
       setTimeout(() => {        //Apaga mensagem após 3 Minutos
         message.delete();
       }, 1000 * 180)
