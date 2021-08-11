@@ -54,7 +54,7 @@ client.on('voiceStateUpdate', async function (oldMember, newMember)  {
       let today = new Date();
       if(today.getDay() == 6 && (today.getHours() > 4 && today.getHours() < 11)){
 
-        textChannel.send(`Nosso segurança chegou, bateu o ponto às ${today.toLocaleTimeString()} e está no horário`, {files: ["https://cdn.discordapp.com/attachments/322106045486858240/872608714648064020/leo.jpg"]});
+        textChannel.send(`Nosso segurança chegou, bateu o ponto às ${today.toLocaleTimeString()} e está no horário`, {files: ["https://cdn.discordapp.com/attachments/417405867324080149/875124026484355122/leo.jpg"]});
 
       } else {
     
@@ -82,7 +82,7 @@ client.on('voiceStateUpdate', async function (oldMember, newMember)  {
 
     else if (newMember.id ==='224147979924275200') {//Ronny
       
-      textChannel.send(await getGif("carros")).then((message) => {
+      textChannel.send(`Chegou o lokizão do Tatuapé`, {files: ["https://cdn.discordapp.com/attachments/322106045486858240/874793963561832518/mcqueen_toretto_ronny.jpg"]}).then((message) => {
         setTimeout(() => {            //Apaga mensagem após 3 Minutos
           message.delete();
         }, 1000 * 180)
