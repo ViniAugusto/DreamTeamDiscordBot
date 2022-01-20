@@ -135,7 +135,7 @@ client.on('message', message =>{
 //   console.log(newUser)
 
 //   if(newUserChannel === '693310952476639242' && oldUserChannel === null) {
-//     textChannel.send(`Tamo saindo galera`,{tts: true});
+//     textChannel.send(await getGif("macaco"));
 //     if(newMember.id ==='257938615907123201'){//Para Cacafuu
 //       let today = new Date();
 //       if(today.getDay() == 6 && (today.getHours() > 0 && today.getHours() < 11)){
