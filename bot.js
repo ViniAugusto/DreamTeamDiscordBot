@@ -1,15 +1,15 @@
 require('dotenv').config();
 
 const Discord = require('discord.js');
-const client = new Discord.Client();
 const fetch = require('node-fetch');
 
+const client = new Discord.Client();
 const prefix = '!'
+
 client.login(process.env.BOT_TOKEN);
 
 client.on('ready', () =>{
     console.log('AEHOOOOOOOOOOOO');
-
 })
 
 async function getGif(tema)  {
@@ -21,23 +21,18 @@ async function getGif(tema)  {
   const randomIndex = Math.floor(Math.random() * json.results.length)
   
   return json.results[randomIndex].url;
-  
-
 }
-// //DreamTeam
+
+//DreamTeam
 client.on('voiceStateUpdate', async function (oldMember, newMember)  {
   const newUserChannel = newMember.channelID;
   const oldUserChannel = oldMember.channelID;
   const textChannel = client.channels.cache.get('322106045486858240');          //Text channel ID
 
 
-  if((newUserChannel === '795049118304436234' || newUserChannel === '862731867295711232' ||  newUserChannel === '847310147478355969') && oldUserChannel === null) {      //Voice channel ID & alguem entrou no voice
-    // textChannel.send(`Tamo saindo galera`).then((message) => {
-    //   setTimeout(() => {          //Apaga mensagem após 3 Minutos
-    //     message.delete();
-    //   }, 1000 * 180)
-    // });
-    if(newMember.id ==='256839511781277696'){
+  if(oldUserChannel === null) {      //Voice channel ID & alguem entrou no voice
+
+    if(newMember.id === '256839511781277696'){
       
       textChannel.send(`É o homem macaco`).then((message) => {
         setTimeout(() => {        //Apaga mensagem após 3 Minutos
@@ -50,11 +45,14 @@ client.on('voiceStateUpdate', async function (oldMember, newMember)  {
         }, 1000 * 180)
       });
 
-    } else if (newMember.id ==='260557019428290570') {        //LeoDancer
+    } else if (newMember.id === '260557019428290570') {        //LeoDancer
+
       let today = new Date();
+
       if(today.getDay() == 6 && (today.getHours() > 4 && today.getHours() < 11)){
 
-        textChannel.send(`Nosso segurança chegou, bateu o ponto às ${today.toLocaleTimeString()} e está no horário`, {files: ["https://cdn.discordapp.com/attachments/417405867324080149/875124026484355122/leo.jpg"]});
+        textChannel.send(`Nosso segurança chegou, bateu o ponto às ${today.toLocaleTimeString()} e está no horário`,
+          {files: ["https://cdn.discordapp.com/attachments/417405867324080149/875124026484355122/leo.jpg"]});
 
       } else {
     
@@ -63,33 +61,30 @@ client.on('voiceStateUpdate', async function (oldMember, newMember)  {
             message.delete();
           }, 1000 * 180)
         });
-      }
 
-      textChannel.send(await getGif("weeb")).then((message) => {
-      setTimeout(() => {            //Apaga mensagem após 3 Minutos
-        message.delete();
-      }, 1000 * 180)
-    });
+        textChannel.send(await getGif("weeb")).then((message) => {
+          setTimeout(() => {            //Apaga mensagem após 3 Minutos
+            message.delete();
+          }, 1000 * 180)
+        });
+      }   
 
-    } else if (newMember.id ==='257938615907123201') {//Mextano
+    } else if (newMember.id === '257938615907123201') {//Mextano
       
       textChannel.send(await getGif("kpop girlgroup")).then((message) => {
         setTimeout(() => {            //Apaga mensagem após 3 Minutos
           message.delete();
         }, 1000 * 180)
       });
-    }
-
-    else if (newMember.id ==='224147979924275200') {//Ronny
+      
+    } else if (newMember.id === '224147979924275200') {//Ronny
       
       textChannel.send(`Chegou o lokizão do Tatuapé`, {files: ["https://cdn.discordapp.com/attachments/322106045486858240/874793963561832518/mcqueen_toretto_ronny.jpg"]}).then((message) => {
         setTimeout(() => {            //Apaga mensagem após 3 Minutos
           message.delete();
         }, 1000 * 180)
       });
-    }
-
-    else if (newMember.id ==='224953693089300492') {//Gustavo
+    } else if (newMember.id === '224953693089300492') {//Gustavo
       
       textChannel.send(`Praeiro Sayajin de Guaianezes`, { files: ['https://cdn.discordapp.com/attachments/322106045486858240/873310468746403941/gustavo.jpg']}).then((message) => {
         setTimeout(() => {            //Apaga mensagem após 3 Minutos
@@ -97,16 +92,7 @@ client.on('voiceStateUpdate', async function (oldMember, newMember)  {
         }, 1000 * 180)
       });
     }
-
-
-
-  } else if (oldUserChannel === '419612592542318593' && newUserChannel !== '419612592542318593') { // Alguém saiu do voice
-    textChannel.send(`Agora a gente ganha`).then((message) => {
-      setTimeout(() => {        //Apaga mensagem após 3 Minutos
-        message.delete();
-      }, 1000 * 180)
-    });
-  }
+  } 
 })
 
 
@@ -124,43 +110,3 @@ client.on('message', message =>{
     });
 	}
 })
-//Test
-// client.on('voiceStateUpdate',async function (oldMember, newMember)  {
-//   const newUserChannel = newMember.channelID;
-//   const oldUserChannel = oldMember.channelID;
-//   const newUser = newMember.id;
-
-//   const textChannel = client.channels.cache.get('662123931485995019');
-
-//   console.log(newUser)
-
-//   if(newUserChannel === '693310952476639242' && oldUserChannel === null) {
-//     textChannel.send(await getGif("macaco"));
-//     if(newMember.id ==='257938615907123201'){//Para Cacafuu
-//       let today = new Date();
-//       if(today.getDay() == 6 && (today.getHours() > 0 && today.getHours() < 11)){
-
-//         textChannel.send(`Nosso segurança chegou no horário, bateu o ponto às ${today.toLocaleTimeString()} e está no horário`, {files: ["https://cdn.discordapp.com/attachments/322106045486858240/865922496901808158/20210717_084633.jpg"]}).then((message) => {
-//           setTimeout(() => {          //Apaga mensagem após 3 Minutos
-//             message.delete();
-//           }, 1000 * 180)
-//         });
-
-//       }
-      
-//       // console.log(await getGif("macaco"))
-//     }
-//   } else if (oldUserChannel === '693310952476639242' && newUserChannel !== '693310952476639242') {
-//     textChannel.send(`Agora a gente ganha`,{tts: true})
-//   } 
-// })
-// let today = new Date();
-//       if(today.getDay() == 6 && (today.getHours() > 4 && today.getHours() < 11)){
-
-//         textChannel.send(`Nosso segurança chegou no horário, bateu o ponto às ${today.toLocaleDateString} e está no horário`, {files: ["https://cdn.discordapp.com/attachments/322106045486858240/865922496901808158/20210717_084633.jpg"]}).then((message) => {
-//           setTimeout(() => {          //Apaga mensagem após 3 Minutos
-//             message.delete();
-//           }, 1000 * 180)
-//         });
-
-//       }
