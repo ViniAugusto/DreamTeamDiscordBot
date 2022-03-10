@@ -91,6 +91,19 @@ client.on('voiceStateUpdate', async function (oldMember, newMember)  {
           message.delete();
         }, 1000 * 180)
       });
+    } else if (newMember.id === '223850253705674762') { //FBC
+      
+      textChannel.send(`Chegou o comunista iludido`).then((message) => {
+        setTimeout(() => {            //Apaga mensagem após 3 Minutos
+          message.delete();
+        }, 1000 * 180)
+      });
+
+      textChannel.send(await getGif("comunism")).then((message) => {
+        setTimeout(() => {            //Apaga mensagem após 3 Minutos
+          message.delete();
+        }, 1000 * 180)
+      });
     }
   } 
 })
