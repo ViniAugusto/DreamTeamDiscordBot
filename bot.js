@@ -28,9 +28,10 @@ client.on('voiceStateUpdate', async function (oldMember, newMember)  {
   const newUserChannel = newMember.channelID;
   const oldUserChannel = oldMember.channelID;
   const textChannel = client.channels.cache.get('322106045486858240');          //Text channel ID
+  const voiceChannels = client.channels.cache.filter(c => c.parentID === '862724945477369887' && c.type === 'voice' && c.id !== c.guild.afkChannelID)
 
 
-  if(oldUserChannel === null) {      //Voice channel ID & alguem entrou no voice
+  if(oldUserChannel === null && voiceChannels.has(newUserChannel)) {      //Voice channel ID & alguem entrou no voice
 
     if(newMember.id === '256839511781277696'){
       
@@ -110,12 +111,9 @@ client.on('voiceStateUpdate', async function (oldMember, newMember)  {
 
 
 client.on('message', message =>{
-  if(!message.content.startsWith(prefix) || message.author.bot) return
+  if(message.author.bot) return
 
-  const args = message.content.slice(prefix.length).trim().split(/ +/);
-	const command = args.shift().toLowerCase();
-
-	if (command === 'sexo') {
+	if (message.content.toLowerCase().includes('sexo')) {
 		message.channel.send('O sexo é um acidente: o que dele recebemos é momentâneo e casual; visamos a algo mais secreto e misterioso do qual o sexo é apenas um sinal, um símbolo.').then((message) => {
       setTimeout(() => {        //Apaga mensagem após 3 Minutos
         message.delete();
