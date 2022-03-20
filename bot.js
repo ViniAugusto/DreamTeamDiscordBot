@@ -14,7 +14,7 @@ client.on('ready', () =>{
 
 async function getGif(tema)  {
   
-  let gifRequest = `https://g.tenor.com/v1/search?q=${tema}&key=${process.env.TENORKEY}`
+  let gifRequest = `https://g.tenor.com/v1/search?q=${tema}&key=${process.env.TENORKEY}&limit=50`
   let response = await fetch(gifRequest);
   let json = await response.json();
 
